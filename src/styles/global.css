@@ -20,7 +20,7 @@ html {
     font-size: 2.5rem;
   }
 
-  /* estilos de la barra de navegación*/
+  /* estilos de la barra de navegaciï¿½n*/
   .hamburger {
     padding-right: 20px;
     cursor: pointer;
@@ -81,4 +81,12 @@ html {
     display: none;
   }
 
+  html.dark {
+    background-color: #0d0950;
+    color: #fff;
+  }
+  
+  .dark .nav-links a {
+    color: #fff;
+  }
 }
