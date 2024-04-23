@@ -1,12 +1,44 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Sobre mi";
+import aboutImg from "@/assets/AboutMe.png";
+import PageLayout from "../layouts/Base.astro";
+import { Image } from "astro:assets";
+import "../styles/global.css";
+const meta = {
+	title: "About",
+};
 ---
-<BaseLayout pageTitle={pageTitle}>
-    <h2>... ¡y mi nuevo sitio Astro!</h2>
 
-    <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
-
-    <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
-
-</BaseLayout>
+<PageLayout meta={meta}>
+	<h1 class="title" style="margin-bottom: 10px;">Sobre mí</h1>
+	<div style="display:flex; ">
+		<div style="width:60% ;padding-right: 10px; ">
+			<div>
+				<p class="mb-4">
+					¡Hola! Soy Jesús Emilio Quintero Aguilar a.k.a Milio. Soy Ingeniero en Sistemas
+					Computacionales, apasionado por el desarrollo de software tanto en el BackEnd como en el
+					FrontEnd. Con experiencia en una variedad de lenguajes y tecnologías, desde C++ y C# hasta
+					Python y Spring Boot, siempre estoy buscando nuevos desafíos para crecer profesionalmente.
+				</p>
+				<p>
+					Desde mis días de estudiante, he estado inmerso en el mundo laboral. Mis primeros pasos
+					fueron en SuKarne, donde durante 8 meses tuve la oportunidad de desempeñar tareas de
+					FullStack. Actualmente, formo parte del equipo grupo Coppel, donde me dedico
+					principalmente al BackEnd y en ocasiones al FrontEnd. Con más de año y medio en este
+					puesto, cada día es una nueva oportunidad para aprender y crecer.
+				</p>
+			</div>
+		</div>
+		<div style="width:40% ">
+			<!-- <Image alt="" src={aboutImg} /> --> 
+		</div>
+	</div>
+	<div style="margin-top: 20px;">
+		<p>
+			Fuera del ámbito profesional, tengo una serie de intereses que me mantienen equilibrado y
+			feliz. Soy un entusiasta de la fotografía analógica, donde estoy explorando mi creatividad y
+			mejorando mis habilidades como principiante. Además, me encanta sumergirme en el mundo de los
+			videojuegos, jugar SoftBall con amigos, y pasar horas construyendo con Legos y resolviendo
+			rompecabezas.
+		</p>
+	</div>
+</PageLayout>

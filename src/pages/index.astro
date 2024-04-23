@@ -1,9 +1,17 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting';
-const pageTitle = "Página de inicio";
+import SocialList from "../components/SocialList.astro";
+import PageLayout from "../layouts/Base.astro";
 ---
-<BaseLayout pageTitle={pageTitle}>
-  <h2>El impresionante subtítulo de mi blog</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
-</BaseLayout>
+
+<PageLayout meta={{ title: "Inicio" }}>
+	<section>
+		<h1 class="title mb-6">¡Hola Mundo!</h1>
+		<p class="mb-4">
+			Hola a todos, soy Emilio, un joven de 26 años aficionado de fotografía analógica y los juegos
+			y los temas interesantes sobre tecnologías.Este blog es un espacio para compartir mis
+			experiencias y pensamientos. Es un lugar donde puedo conectar con ustedes y donde podemos
+			aprender unos de otros.
+		</p>
+		<SocialList />
+	</section>
+</PageLayout>

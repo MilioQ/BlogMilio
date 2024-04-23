@@ -1,0 +1,31 @@
+---
+import type { SiteMeta } from "../types";
+
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { siteConfig } from "../site.config";
+import "../styles/global.css";
+
+
+interface Props {
+	meta: SiteMeta;
+}
+
+const {
+	meta: { title },
+} = Astro.props;
+---
+
+<html lang={siteConfig.lang}>
+	<head >
+		<title>{title}</title>
+        <meta charset="utf-8" />
+	</head>
+	<body>
+		<Header />
+		<main id="main">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
