@@ -1,9 +1,10 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialList from "../components/SocialList.astro";
-import PageLayout from "../layouts/Base.astro";
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = ""
 ---
-
-<PageLayout meta={{ title: "Inicio" }}>
+<BaseLayout pageTitle={pageTitle}>
 	<section>
 		<h1 class="title mb-6">¡Hola Mundo!</h1>
 		<p class="mb-4">
@@ -14,4 +15,4 @@ import PageLayout from "../layouts/Base.astro";
 		</p>
 		<SocialList />
 	</section>
-</PageLayout>
+</BaseLayout>
