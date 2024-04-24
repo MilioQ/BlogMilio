@@ -2,22 +2,25 @@
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout>
+  <h1 class="title mb-3">{frontmatter.title}</h1>
+  <p class="mb-3" >{frontmatter.description}</p>
+  <div class="mb-3">  <slot /></div>
+
   
-<br>
-  <p><em>{frontmatter.description}</em></p>
-  <br>
-  <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+  <p >Escrito por: {frontmatter.author}</p>
+  <p class="mb-3" style="font-weight: bold;"><em>{frontmatter.pubDate.toString().slice(0,10)}</em></p>
+  <img src={frontmatter.image.url} alt={frontmatter.image.alt}  class="mb-3" />
+  
 
-  <p>Escrito por: {frontmatter.author}</p>
 
-  <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+  
 
  
-  <slot/>
+ 
+
   <h3>Tags:</h3>
   <div class="tags" style="padding-top: 10px;">
-    
     {frontmatter.tags.map((tag) => (
       <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
     ))}
@@ -25,31 +28,22 @@ const { frontmatter } = Astro.props;
 
 </BaseLayout>
 <style>
+  a {
+    color: #500000;
+  }
+
   .tags {
     display: flex;
     flex-wrap: wrap;
   }
-  .tags a {    
-    display: inline-block;
-    height: 24px;
-    line-height: 24px;
-    position: relative;
-    margin: 0 10px 10px 0;
-    padding: 0 10px 0 12px;
-    background: #fff; 
-    border-width: 1px;
-  border-style: groove;
-  border-color: black;   
-    border-radius: 3px;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    color: black;
-    font-size: 12px;
-    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
-    text-decoration: none;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    font-weight: console;
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em 1em;
+    font-size: 1.15em;
+    background-color: #F8FCFD;
   }
- 
   
 </style>

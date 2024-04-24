@@ -1,16 +1,14 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'Mi primera publicación en el blog'
+title: '¡Disfrutando del sol y la arena en Semana Santa ️2024!'
 pubDate: 2024-04-23
-description: 'Este es la primera publicación de mi nuevo blog Astro.'
+description: 'Pasando unos días increíbles en la playa, aprovechando el clima perfecto y la buena compañía. ☀️'
 author: 'Emilio Quintero'
 image:
     url: 'https://i.imgur.com/eZ0MSj2.jpeg'
-    alt: 'El logotipo completo de Astro.'
-tags: ["Playa", "Campamento", "Semana Santa"]
+    alt: 'Playa San Juan.'
+tags: ["Playa", "relax", "Semana Santa","vacaciones","travel"]
 ---
  
+¿Tú también estás disfrutando de tus vacaciones de Semana Santa?
 
-
-
-¡Bienvenido a mi primer post en astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.
