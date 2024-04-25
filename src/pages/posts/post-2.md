@@ -3,9 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi segunda publicación en el blog
 author: Emilio Quintero
 description: "Después de aprender un poco de Astro, ¡no podía parar!"
-image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "Miniatura de los arcos de Astro."
+images: ["https://i.imgur.com/eZ0MSj2.jpeg", "https://i.imgur.com/ErfCDY6.jpg","https://i.imgur.com/aj14hin.jpeg"]
 pubDate: 2022-07-08
 tags: ["astro", "bloguear", "aprender en público", "éxitos"]
 ---

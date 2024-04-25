@@ -3,9 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi tercera publicación en el blog
 author: Emilio Quintero
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
-image:
-    url: "https://docs.astro.build/assets/rays.webp"
-    alt: "Miniatura de los rayos de Astro."
+images: ["https://i.imgur.com/eZ0MSj2.jpeg", "https://i.imgur.com/ErfCDY6.jpg","https://i.imgur.com/aj14hin.jpeg"]
 pubDate: 2022-07-15
 tags: ["astro", "aprender en público", "contratiempos", "comunidad"]
 ---

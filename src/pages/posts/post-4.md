@@ -3,9 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi cuarta entrada en el blog
 author: Emilio Quintero
 description: "Esta entrada aparecerá sola!"
-image:
-  url: "https://docs.astro.build/default-og-image.png"
-  alt: "La palabra 'astro' contra una ilustración de planetas y estrellas."
+images: ["https://i.imgur.com/eZ0MSj2.jpeg", "https://i.imgur.com/ErfCDY6.jpg","https://i.imgur.com/aj14hin.jpeg"]
 pubDate: 2022-08-08
 tags: ["astro", "éxitos"]
 ---
