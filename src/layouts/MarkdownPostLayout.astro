@@ -16,26 +16,25 @@ import 'photoswipe/style.css';
   
 
 
-  <iframe src={frontmatter.location} width="auto" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src={frontmatter.location} width="auto" height="auto" style="border:0;" allowfullscreen="" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 <h2 style="padding-top: 10px; padding-bottom: 10px;">Galeria</h2>
 
-<div style="display: ruby; text-align: center;">
+<div class="grid grid-cols-3 masx-w-6xl gap-8 mx-auto py-5" id="gallery">
   {frontmatter.images.map((imagen) => (
-    <div class="pswp-gallery pswp-gallery--single-column"  id="gallery" style="padding: 5px; ">
-    <a href={imagen}
-      data-pswp-width="2500" 
-      data-pswp-height="1669" 
-      target="_blank">
-      <img src={imagen} width="200" height="100" alt="" />
-    </a>
-    </div>
-
-
+      <a 
+        class="group hover:scale-105 transition-all relative"
+        href={imagen}
+        data-pswp-width="3000" 
+        data-pswp-height="2000" 
+        target="_blank"
+        >
+        <img src={imagen} width="200" height="100" alt="" class="rounded-sm shadow-2xl hover:shadow-black-100/75"/>
+      </a>
   ))}
+
+
 </div>
-
-
 
 
 
