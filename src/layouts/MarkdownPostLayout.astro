@@ -1,6 +1,8 @@
 ---
+import Galeria from '../components/Galeria.astro';
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
+import 'photoswipe/style.css';
 ---
 <BaseLayout>
   <h1 class="title mb-3">{frontmatter.title}</h1>
@@ -10,14 +12,32 @@ const { frontmatter } = Astro.props;
   
   <p >Escrito por: {frontmatter.author}</p>
   <p class="mb-3" style="font-weight: bold;"><em>{frontmatter.pubDate.toString().slice(0,10)}</em></p>
-  <img src={frontmatter.image.url} alt={frontmatter.image.alt}  class="mb-3" />
-  
-
 
   
 
- 
- 
+
+  <iframe src={frontmatter.location} width="auto" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<h2 style="padding-top: 10px; padding-bottom: 10px;">Galeria</h2>
+
+<div style="display: ruby; text-align: center;">
+  {frontmatter.images.map((imagen) => (
+    <div class="pswp-gallery pswp-gallery--single-column"  id="gallery" style="padding: 5px; ">
+    <a href={imagen}
+      data-pswp-width="2500" 
+      data-pswp-height="1669" 
+      target="_blank">
+      <img src={imagen} width="200" height="100" alt="" />
+    </a>
+    </div>
+
+
+  ))}
+</div>
+
+
+
+
 
   <h3>Tags:</h3>
   <div class="tags" style="padding-top: 10px;">
@@ -47,3 +67,15 @@ const { frontmatter } = Astro.props;
   }
   
 </style>
+
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+
+   const lightbox = new PhotoSwipeLightbox({
+     gallery: '#gallery',
+     children: 'a',
+     pswpModule: () => import('photoswipe')
+   });
+   lightbox.init();
+   </script>

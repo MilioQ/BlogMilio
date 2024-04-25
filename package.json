@@ -17,6 +17,7 @@
     "@tailwindcss/typography": "^0.5.12",
     "astro": "^4.6.1",
     "astro-expressive-code": "^0.35.2",
+    "photoswipe": "^5.4.3",
     "preact": "^10.20.2",
     "reading-time": "^1.5.0"
   },

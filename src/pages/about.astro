@@ -1,15 +1,11 @@
 ---
-import aboutImg from "@/assets/AboutMe.png";
-import PageLayout from "../layouts/Base.astro";
-import { Image } from "astro:assets";
-import "../styles/global.css";
-const meta = {
-	title: "About",
-};
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialList from "../components/SocialList.astro";
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = ""
 ---
-
-<PageLayout meta={meta}>
-	<h1 class="title" style="margin-bottom: 10px;">Sobre mí</h1>
+<BaseLayout pageTitle={pageTitle}>
+    <h1 class="title" style="margin-bottom: 10px;">Sobre mí</h1>
 	<div style="display:flex; ">
 		<div style="width:60% ;padding-right: 10px; ">
 			<div>
@@ -41,4 +37,4 @@ const meta = {
 			rompecabezas.
 		</p>
 	</div>
-</PageLayout>
+</BaseLayout>
