@@ -5,15 +5,31 @@ import SocialList from "../components/SocialList.astro";
 
 const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = ""
+const dateOptions: object = {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+};
 ---
 <BaseLayout pageTitle={pageTitle}>
   <section>
-		<h1 class="title mb-6">Aquí es donde publicaré sobre mi viaje de aprendizaje de Astro.</h1>
-		<p class="mb-4">
-		  <ul>
-        {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
-      </ul>
-		</p>
+		<h1 class="text-lg font-bold dark:text-white mb-6">Aquí es donde publicaré sobre mi viaje de aprendizaje de Astro.</h1>
+		<div  class="flex">
+			<div  class="flex pr-5 ">
+				<p class="mb-4" >
+					<ul>
+				  {allPosts.map((post) => <BlogPost url={post.url} title={new Date(post.frontmatter.pubDate).toLocaleDateString("es-MX", dateOptions)} />)}
+				</ul>
+				  </p>
+			</div>
+			<div class="flex">
+				<p class="mb-4">
+					<ul>
+				  {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+				</ul>
+				  </p>
+			</div>
+		</div>
 
 	</section>
 </BaseLayout>
