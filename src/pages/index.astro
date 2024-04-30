@@ -3,6 +3,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialList from "../components/SocialList.astro";
 const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = ""
+const tecnologias: { desc: string; href: string; title: string }[] = [
+	{
+		desc: "Crea sitios web rápidos, más rápido.",
+		href: "https://astro.build",
+		title: "Astro",
+	},
+	{
+		desc: "Crea rápidamente sitios web modernos sin abandonar su HTML.",
+		href: "https://tailwindcss.com",
+		title: "Tailwind CSS",
+	},
+	{
+		desc: "Lenguaje de marcado simple y fácil de usar.",
+		href: "https://www.markdownguide.org/",
+		title: "Markdown",
+	},
+	{
+		desc: "Iconos fácil de usar para Astro.",
+		href: "https://github.com/natemoo-re/astro-icon#readme",
+		title: "Astro Icon",
+	},
+	{
+		desc: "Galería de imágenes con JavaScript.",
+		href: "https://photoswipe.com/",
+		title: "PhotoSwipe",
+	},
+];
+allPosts.sort((b, a) => {
+    const dateA = new Date(a.frontmatter.pubDate);
+    const dateB = new Date(b.frontmatter.pubDate);
+    return dateB.getTime() - dateA.getTime(); // Convertir a milisegundos y restar para comparar
+});
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<section>
@@ -15,5 +47,30 @@ const pageTitle = ""
 		</p>
 		
 	</section>
-	<SocialList/>
+	
+		
+		<SocialList/>
+	
+	
+	
+	<section >
+		<h2 class="title mb-4 text-xl">Tecnologías</h2>
+		<dl class="space-y-4">
+			{
+				tecnologias.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2 md:flex-row">
+						<dt>
+							<span class="flex">
+								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
 </BaseLayout>

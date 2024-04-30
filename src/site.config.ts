@@ -34,10 +34,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "Blog",
 		path: "/blog/",
 	},
-	{
-		title: "Tags",
-		path: "/tags/",
-	},
+	// {
+	// 	title: "Tags",
+	// 	path: "/tags/",
+	// },
 ];
 
 // https://expressive-code.com/reference/configuration/
