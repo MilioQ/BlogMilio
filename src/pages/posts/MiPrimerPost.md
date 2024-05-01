@@ -81,10 +81,10 @@ location : ''
    </a>
    <a 
       class="group hover:scale-105 transition-all relative" 
-      href="../..../../Post1/Img-9.jpg" 
+      href="../../Post1/Img-9.jpg" 
       data-pswp-width="3000" 
       data-pswp-height="2000" 
       target="_blank">
-   <img src="../..../../Post1/Img-9.jpg" width="200" height="100" alt="" class="rounded-sm shadow-2xl hover:shadow-black-100/75" />
+   <img src="../../Post1/Img-9.jpg" width="200" height="100" alt="" class="rounded-sm shadow-2xl hover:shadow-black-100/75" />
    </a>
 </div>
